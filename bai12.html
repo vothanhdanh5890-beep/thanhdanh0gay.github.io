@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luyện tập & Vận dụng</title>
+
+<style>
+    body {
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #fff7c2, #ffe58a);
+        padding: 20px;
+        color: #5a4200;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 42px;
+        margin-bottom: 30px;
+        color: #d48b00;
+        text-shadow: 2px 2px 6px rgba(255, 190, 0, 0.6);
+    }
+
+    .section-box {
+        background: rgba(255, 255, 255, 0.65);
+        border: 2px solid #ffd84d;
+        border-radius: 18px;
+        padding: 20px;
+        margin: 25px 0;
+        box-shadow: 0 6px 14px rgba(255, 173, 0, 0.4);
+        position: relative;
+    }
+
+    /* Ảnh hoa lá trang trí */
+    .flower {
+        position: absolute;
+        width: 60px;
+        top: -25px;
+        right: -20px;
+        opacity: 0.9;
+    }
+
+    /* Mặt trời */
+    .sun {
+        width: 110px;
+        display: block;
+        margin: 0 auto 15px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input, select, textarea {
+        width: 90%;
+        padding: 10px;
+        border: 2px solid #f3c500;
+        border-radius: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        background: #fff8db;
+        outline: none;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+</style>
+
+</head>
+<body>
+
+<h1>🌼 Luyện tập & Vận dụng 🌞</h1>
+
+<img class="sun" src="https://i.imgur.com/Yl0zUey.png" alt="Sun">
+
+<!-- ============================
+       PHẦN LUYỆN TẬP
+=============================== -->
+<div class="section-box">
+    <img class="flower" src="https://i.imgur.com/O3J8s7s.png" alt="flower">
+
+    <h2>🌿 Phần Luyện Tập</h2>
+
+    <h3>Form cơ bản</h3>
+    <form action="/register" method="post">
+        <input type="text" placeholder="(Form mẫu – chưa có nội dung)">
+    </form>
+
+    <h3>Form có Select</h3>
+    <form>
+        <label for="country">Quốc gia:</label><br>
+        <select id="country" name="country">
+            <option value="vietnam">Việt Nam</option>
+            <option value="usa">United States</option>
+            <option value="uk">United Kingdom</option>
+        </select>
+    </form>
+
+    <h3>Form với Textarea</h3>
+    <form>
+        <label for="feedback">Phản hồi:</label><br>
+        <textarea id="feedback" name="feedback" rows="4"></textarea>
+    </form>
+
+    <h3>Input kiểu Text</h3>
+    <form>
+        <label for="username">Tên người dùng:</label><br>
+        <input type="text" id="username" name="username">
+    </form>
+
+    <h3>Input Email</h3>
+    <form>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email">
+    </form>
+
+    <h3>Input Date</h3>
+    <form>
+        <label for="birthdate">Ngày sinh:</label><br>
+        <input type="date" id="birthdate" name="birthdate">
+    </form>
+</div>
+
+<!-- ============================
+       PHẦN VẬN DỤNG
+=============================== -->
+<div class="section-box">
+    <img class="flower" src="https://i.imgur.com/O3J8s7s.png" alt="flower">
+
+    <h2>🌻 Phần Vận Dụng</h2>
+
+    <h3>Biểu mẫu đăng ký thành viên</h3>
+
+    <form action="/submit_registration" method="post">
+        <label for="fullname">Họ và tên:</label><br>
+        <input type="text" id="fullname" name="fullname" required><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="birthdate">Ngày sinh:</label><br>
+        <input type="date" id="birthdate" name="birthdate" required><br>
+
+        <label for="membership">Loại hình thành viên:</label><br>
+        <select id="membership" name="membership">
+            <option value="basic">Thành viên cơ bản</option>
+            <option value="premium">Thành viên cao cấp</option>
+        </select><br>
+
+        <input type="submit" value="Đăng ký" style="
+            background:#ffd342; 
+            padding:10px 20px; 
+            border-radius:10px;
+            border:none; 
+            cursor:pointer; 
+            font-size:16px; 
+            box-shadow:0 4px 10px rgba(255,180,0,0.5);
+        ">
+    </form>
+</div>
+
+</body>
+</html>
