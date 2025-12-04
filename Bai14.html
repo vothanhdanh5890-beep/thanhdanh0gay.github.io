@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 14: Định dạng văn bản bằng CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .box {
+            background: #ffffffcc;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #aac;
+            margin-bottom: 25px;
+        }
+        h1, h2 {
+            color: #003366;
+            text-shadow: 0 0 6px #ffffff;
+        }
+        pre {
+            background: #eef;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bài 14: Định dạng văn bản bằng CSS</h1>
+
+    <div class="box">
+        <h2>1. Luyện tập</h2>
+        <h3>Luyện tập 1 trang 82 Tin học 12</h3>
+        <p><b>Yêu cầu:</b> Mỗi phông chữ sau đây thuộc loại nào?</p>
+        <p><b>Lời giải:</b></p>
+        <ul>
+            <li>a) Times New Roman – Serif</li>
+            <li>b) Courier – Monospace</li>
+            <li>c) Abadi – Sans-serif</li>
+            <li>d) Bradley Hand ITC – Handwriting</li>
+            <li>e) Berlin Sans FB – Sans-serif</li>
+            <li>f) ALGERIAN – Decorative / Display</li>
+            <li>g) Consolas – Monospace</li>
+            <li>h) Cascadia – Monospace</li>
+        </ul>
+
+        <h3>Luyện tập 2 trang 82 Tin học 12</h3>
+        <p><b>Yêu cầu:</b> Liệt kê các thuộc tính CSS liên quan đến định dạng đoạn văn bản.</p>
+        <p>(Hình minh họa được đề cập trong SGK)</p>
+        <p><b>Các thuộc tính CSS thường dùng:</b></p>
+        <ul>
+            <li>font-family</li>
+            <li>font-size</li>
+            <li>font-style</li>
+            <li>font-weight</li>
+            <li>color</li>
+            <li>text-align</li>
+            <li>text-indent</li>
+            <li>line-height</li>
+            <li>text-decoration</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>2. Vận dụng</h2>
+
+        <h3>Vận dụng 1 trang 82 Tin học 12</h3>
+        <p><b>Lời giải:</b></p>
+        <ul>
+            <li><b>font-variant:</b> quy định kiểu chữ hoa (normal, small-caps).</li>
+            <li><b>letter-spacing:</b> khoảng cách giữa các ký tự.</li>
+            <li><b>word-spacing:</b> khoảng cách giữa các từ.</li>
+            <li><b>text-shadow:</b> tạo hiệu ứng bóng cho chữ.</li>
+        </ul>
+
+        <h3>Vận dụng 2 trang 82 Tin học 12</h3>
+        <p>Thiết lập hai tệp CSS khác nhau để định dạng bài "Lịch sử CSS".</p>
+
+        <h4>Kiểu 1:</h4>
+        <pre>
+/* style1.css */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+h1 {
+    font-family: "Times New Roman", serif;
+    font-size: 28px;
+    color: #990000;
+}
+
+p {
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    color: #666666;
+}
+        </pre>
+
+        <h4>Kiểu 2:</h4>
+        <pre>
+/* style2.css */
+body {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 18px;
+    color: #555555;
+}
+
+h1 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 32px;
+    color: #006600;
+}
+
+p {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #888888;
+}
+        </pre>
+    </div>
+
+</body>
+</html>
