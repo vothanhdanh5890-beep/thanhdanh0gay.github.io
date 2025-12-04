@@ -3,246 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nhóm 2 - Giới thiệu thành viên</title>
-
+<title>Trang Web Tin Học - Nhóm 2</title>
 <style>
-/* ============================= */
-/* THEME COLORS */
-/* ============================= */
-:root {
-    --primary: #1B3B6F;
-    --secondary: #FFC857;
-    --accent: #4ABDAC;
-    --bg: #F4F7FB;
-    --text-dark: #0D1B2A;
-    --card-radius: 20px;
-    --shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url('https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/xanh.jpg?raw=true') no-repeat center/cover;
+        filter: brightness(0.8);
+    }
 
-/* ============================= */
-/* GLOBAL */
-/* ============================= */
-body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text-dark);
-    animation: fadein 0.8s ease;
-}
+    /* Hiệu ứng tuyết rơi */
+    .snowflake {
+        position: fixed;
+        top: -10px;
+        color: white;
+        font-size: 1em;
+        user-select: none;
+        pointer-events: none;
+        z-index: 9999;
+        animation: fall linear infinite;
+    }
+    @keyframes fall {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(100vh); opacity: 0; }
+    }
 
-@keyframes fadein {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+    /* Banner */
+    .banner {
+        background: url('https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/unnamed.jpg?raw=true') center/cover;
+        height: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .banner img {
+        width: 140px;
+        filter: drop-shadow(0 0 10px white);
+    }
 
-/* ============================= */
-/* NAVBAR */
-/* ============================= */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    padding: 16px 0;
-    background: rgba(27, 59, 111, 0.9);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+    /* Nội dung chính */
+    .main-box {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.3);
+        width: 85%;
+        margin: 20px auto;
+        padding: 25px;
+        border-radius: 15px;
+        border: 2px solid rgba(255,255,255,0.6);
+    }
+    h1 {
+        text-align: center;
+        font-size: 32px;
+        color: #fffacd; /* vàng trắng */
+        margin-bottom: 10px;
+        text-shadow: 0 0 8px #ffffff, 0 0 15px #ffea00; /* hiệu ứng glowy */
+    }
 
-nav a {
-    color: var(--secondary);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 17px;
-    transition: 0.25s;
-}
+    .members {
+        margin-top: 20px;
+    }
+    .member-box {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.4);
+        border: 2px solid #89CFF0;
+        border-radius: 12px;
+        padding: 12px;
+        margin-bottom: 15px;
+        transition: 0.3s;
+    }
+    .member-box:hover {
+        background: rgba(255, 255, 255, 0.7);
+        transform: scale(1.02);
+    }
+    .member-box img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: 3px solid white;
+        margin-right: 15px;
+    }
+    .member-box a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #fffacd; /* vàng trắng */
+        font-weight: bold;
+        text-shadow: 0 0 6px #ffffff, 0 0 12px #ffea00; /* glowy */
+    }
 
-nav a:hover {
-    color: white;
-    transform: translateY(-2px);
-}
+    /* Bài tập */
+    .exercise {
+        background: white;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 20px;
+        cursor: pointer;
+        border: 2px solid #99CCFF;
+        transition: 0.3s;
+    }
+    .exercise:hover {
+        background: #e6f3ff;
+        transform: scale(1.03);
+    }
 
-/* ============================= */
-/* BANNER */
-/* ============================= */
-.banner {
-    position: relative;
-    width: 100%;
-    height: 330px;
-    background-image: url("https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/unnamed.jpg?raw=true");
-    background-size: cover;
-    background-position: center;
-}
+    /* Footer */
+    footer {
+        text-align: center;
+        margin-top: 30px;
+        padding: 15px;
+        background: rgba(255,255,255,0.5);
+        font-size: 18px;
+        border-top: 2px solid #bcdfff;
+    }
+    footer img {
+        width: 170px;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+    /* Glowy headings */
+    h1, h2, h3 {
+        color: #fff7b3;
+        text-shadow: 0 0 8px #fff7b3, 0 0 16px #ffffff;
+    }
 
-.banner img.logo {
-    width: 120px;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-}
-
-.banner span {
-    position: absolute;
-    bottom: 30px;
-    left: 160px;
-    font-size: 32px;
-    font-weight: 700;
-    color: white;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.4);
-}
-
-/* ============================= */
-/* MEMBERS */
-/* ============================= */
-.members {
-    display: flex;
-    justify-content: center;
-    gap: 45px;
-    flex-wrap: wrap;
-    padding: 40px 0;
-}
-
-.member {
-    width: 180px;
-    padding: 20px;
-    background: white;
-    border-radius: var(--card-radius);
-    box-shadow: var(--shadow);
-    text-align: center;
-    cursor: pointer;
-    transition: 0.35s;
-}
-
-.member:hover {
-    transform: translateY(-8px);
-}
-
-.member img {
-    width: 125px;
-    height: 125px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 12px;
-    border: 3px solid var(--accent);
-}
-
-.member h3 {
-    margin-top: 8px;
-    font-size: 19px;
-    color: var(--primary);
-    font-weight: 700;
-}
-
-/* ============================= */
-/* EXERCISES */
-/* ============================= */
-.exercises {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding-bottom: 60px;
-}
-
-.exercise {
-    width: 140px;
-    height: 140px;
-    border-radius: var(--card-radius);
-    background: var(--secondary);
-    color: var(--primary);
-    font-size: 22px;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: var(--shadow);
-    transition: 0.35s;
-}
-
-.exercise:hover {
-    transform: translateY(-8px) rotate(-3deg);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25);
-}
-
-/* ============================= */
-/* FOOTER */
-/* ============================= */
-footer {
-    text-align: center;
-    padding: 18px;
-    background: var(--primary);
-    color: var(--secondary);
-    font-size: 14px;
-    letter-spacing: 0.4px;
-}
-
-/* ============================= */
-/* MOBILE */
-/* ============================= */
-@media (max-width: 500px) {
-    .banner { font-size: 26px; height: 260px; }
-    .exercise { width: 110px; height: 110px; font-size: 18px; }
-}
+    /* Softer yellow names */
+    .member-card h3 {
+        color: #f5e7a2;
+        text-shadow: 0 0 4px #f5e7a2;
+    }
 </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav>
-    <a href="#members">Thành viên</a>
-    <a href="#exercises">Bài tập</a>
-</nav>
+<!-- Tạo hiệu ứng tuyết rơi -->
+<script>
+    function createSnow() {
+        const snow = document.createElement('div');
+        snow.classList.add('snowflake');
+        snow.textContent = '❄';
+        snow.style.left = Math.random() * window.innerWidth + 'px';
+        snow.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        snow.style.fontSize = (Math.random() * 10 + 10) + 'px';
+        document.body.appendChild(snow);
+        setTimeout(() => snow.remove(), 5000);
+    }
+    setInterval(createSnow, 150);
+</script>
 
 <!-- Banner -->
 <div class="banner">
-    <img class="logo" src="https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/456849929_122201657276024412_8306569012330573247_n.jpg?raw=true" />
-    <span>Giới thiệu thành viên nhóm 2</span>
+    <img src="https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/huyhieutruong.png?raw=true" alt="Logo">
 </div>
 
-<!-- Members -->
-<h2 id="members" style="text-align:center; margin-top:40px;">Thành viên nhóm</h2>
-<div class="members">
+<!-- Nội dung chính -->
+<div class="main-box">
+    <h1>Trang web giới thiệu thành viên nhóm 2</h1>
 
-    <div class="member" onclick="location.href='https://vothanhdanh5890-beep.github.io/thanhdanh.github.io/'">
-        <img src="https://raw.githubusercontent.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/refs/heads/main/images%20(1).jpg">
-        <h3>Võ Thành Danh</h3>
+    <h2 {
+        color: #fffacd;
+        text-shadow: 0 0 6px #ffffff, 0 0 12px #ffea00;
+    }
+    h2>Giới Thiệu Thành Viên</h2>
+    <div class="members">
+
+        <div class="member-box">
+            <img src="https://raw.githubusercontent.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/refs/heads/main/images%20(1).jpg" alt="Avatar Danh">
+            <a href="https://vothanhdanh5890-beep.github.io/thanhdanh.github.io/">Võ Thành Danh – Trưởng nhóm</a>
+        </div>
+
+        <div class="member-box">
+            <img src="https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/avatar%201.jpg?raw=true" alt="Avatar Ngân">
+            <a href="https://yenngan1234.github.io/yenngan.github.io/">Phạm Yến Ngân – Cánh tay trái của trưởng nhóm</a>
+        </div>
+
+        <div class="member-box">
+            <img src="https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/avatar%203.jpg?raw=true" alt="Avatar Vũ">
+            <a href="https://ngpvu208.github.io/ngpvu2008.github.io/">Nguyễn Phi Vũ – Móng dò</a>
+        </div>
+
+        <div class="member-box">
+            <img src="https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/avatar%202.jpg?raw=true" alt="Avatar Vy">
+            <a href="https://caovy1405-dev.github.io/CaoVy.github.io/">Cao Ngô Anh Vy – Cánh tay phải của trưởng nhóm</a>
+        </div>
+
     </div>
 
-    <div class="member" onclick="location.href='https://yenngan1234.github.io/yenngan.github.io/'">
-        <img src="https://raw.githubusercontent.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/refs/heads/main/2b65b5b221ff5df58b2cbc2fc84c1022.jpg">
-        <h3>Phạm Yến Ngân</h3>
-    </div>
-
-    <div class="member" onclick="location.href='https://ngpvu208.github.io/ngpvu2008.github.io/'">
-        <img src="https://raw.githubusercontent.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/refs/heads/main/images.jpg">
-        <h3>Nguyễn Phi Vũ</h3>
-    </div>
-
-    <div class="member" onclick="location.href='https://caovy1405-dev.github.io/CaoVy.github.io/'">
-        <img src="https://raw.githubusercontent.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/refs/heads/main/654f6babf5f830d9b848f6b7_Funny20for2024.png">
-        <h3>Cao Ngô Anh Vy</h3>
-    </div>
-</div>
-
-<!-- Exercises -->
-<h2 id="exercises" style="text-align:center; margin-top:40px;">Bài tập</h2>
-<div class="exercises">
-
+    <h2>Bài Tập</h2>
     <div class="exercise" onclick="location.href='bai9.html'">Bài 9</div>
     <div class="exercise" onclick="location.href='Bai10.html'">Bài 10</div>
     <div class="exercise" onclick="location.href='bai11.html'">Bài 11</div>
     <div class="exercise" onclick="location.href='bai12naymoidung.html'">Bài 12</div>
-
+    <div class="exercise" onclick="location.href='Bai13.html'">Bài 13</div>
+    <div class="exercise" onclick="location.href='Bai14.html'">Bài 14</div>
 </div>
 
+<!-- Footer -->
 <footer>
-    © 2025 - Nhóm 2 | Lớp 12 Anh
+    © Nhóm 2 – Cảm ơn bạn đã ghé thăm!<br>
+    <img src="https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/thanksforvisit.jpg?raw=true" alt="Cảm ơn">
 </footer>
 
 </body>
 </html>
-
-
