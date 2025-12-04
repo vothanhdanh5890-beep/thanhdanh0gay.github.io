@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 11: Chèn tệp tin đa phương tiện và khung nội tuyến</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border: 4px solid #8ec5fc; /* Viền màu nhẹ đẹp */
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        img {
+            border-radius: 10px;
+        }
+        .avatar {
+            width: 200px;
+            display: block;
+            margin-top: 10px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bài 11: Chèn tệp tin đa phương tiện và khung nội tuyến</h1>
+
+        <div class="section">
+            <h2>Luyện tập 1 – Trang 66 Tin học 12</h2>
+            <p><b>Câu hỏi:</b> Cho ảnh có kích thước gốc 720 × 450 px. Chèn ảnh vào trang web bằng lệnh:</p>
+            <pre>&lt;img src="images/1.png" alt="chiếc lá" width="600"&gt;</pre>
+            <p><b>Hỏi:</b> Ảnh trong trang web có kích thước bao nhiêu?</p>
+            <h3>✔ Lời giải:</h3>
+            <p>Kích thước ảnh hiển thị được quyết định bởi thuộc tính <b>width</b> của thẻ &lt;img&gt;. Khi đặt <b>width="600"</b>, trình duyệt sẽ tự động tính chiều cao theo tỉ lệ ảnh gốc.</p>
+            <p>Tỉ lệ ảnh gốc: 720 × 450 px.</p>
+            <p>Chiều cao mới được tính bằng công thức:</p>
+            <pre>600 × (450 / 720) = 375 px</pre>
+            <p><b>➡ Vậy ảnh hiển thị sẽ có kích thước: 600 × 375 px.</b></p>
+        </div>
+
+        <div class="section">
+            <h2>Luyện tập 2 – Trang 66 Tin học 12</h2>
+            <p>Chèn thêm một số ảnh để giới thiệu bản thân.</p>
+            <h3>✔ Giới thiệu bản thân:</h3>
+            <p><b>Tên:</b> Võ Thành Danh</p>
+            <p><b>Ảnh đại diện (Avatar):</b></p>
+            <img class="avatar" src="https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/images%20(1).jpg?raw=true" alt="Avatar của Võ Thành Danh">
+        </div>
+    </div>
+</body>
+</html>
