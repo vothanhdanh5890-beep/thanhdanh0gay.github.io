@@ -73,102 +73,51 @@ nav a:hover {
     background-image: url("https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/unnamed.jpg?raw=true");
     background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: white;
-    font-size: 38px;
-    font-weight: 700;
-    text-shadow: 2px 3px 8px black;
 }
 
-/* Banner overlay */
-.banner::after {
-    content: "";
+.banner img.logo {
+    width: 120px;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
-    top: 0;
-    left: 0;
-}
-
-.banner .logo {
-    position: absolute;
-    top: 20px;
+    bottom: 20px;
     left: 20px;
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    border: 3px solid var(--secondary);
-    z-index: 2;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
 }
 
 .banner span {
-    position: relative;
-    z-index: 2;
-}
-
-/* ============================= */
-/* SECTION TITLE */
-/* ============================= */
-h2 {
-    text-align: center;
-    font-size: 30px;
-    margin: 45px 0 25px;
-    color: var(--primary);
-    letter-spacing: 0.5px;
+    position: absolute;
+    bottom: 30px;
+    left: 160px;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.4);
 }
 
 /* ============================= */
 /* MEMBERS */
 /* ============================= */
 .members {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 28px;
-    padding: 0 40px 60px;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    flex-wrap: wrap;
+    padding: 40px 0;
 }
 
-/* Member card with glass effect */
 .member {
-    background: rgba(255,255,255,0.75);
+    width: 180px;
+    padding: 20px;
+    background: white;
     border-radius: var(--card-radius);
     box-shadow: var(--shadow);
-    padding: 24px;
     text-align: center;
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.4);
     cursor: pointer;
-    position: relative;
-}
-
-/* animated border */
-.member::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 2px;
-    background: linear-gradient(135deg, var(--accent), var(--secondary));
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: 0.3s;
-}
-
-.member:hover::before {
-    opacity: 1;
+    transition: 0.35s;
 }
 
 .member:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+    transform: translateY(-8px);
 }
 
 .member img {
@@ -213,7 +162,6 @@ h2 {
     transition: 0.35s;
 }
 
-/* Exercise hover: rotate + lift */
 .exercise:hover {
     transform: translateY(-8px) rotate(-3deg);
     box-shadow: 0 14px 28px rgba(0,0,0,0.25);
@@ -255,7 +203,7 @@ footer {
 </div>
 
 <!-- Members -->
-<h2 id="members">Thành viên nhóm</h2>
+<h2 id="members" style="text-align:center; margin-top:40px;">Thành viên nhóm</h2>
 <div class="members">
 
     <div class="member" onclick="location.href='https://vothanhdanh5890-beep.github.io/thanhdanh.github.io/'">
@@ -279,26 +227,15 @@ footer {
     </div>
 </div>
 
-<!-- Bài 8–12 -->
-<div class="container-bai">
-    <div style="text-align:center; padding: 20px;">
-    <a href="bai9.html" style="font-size:18px; color:#1B3B6F; font-weight:600;">bai9.html</a>
-    </div>
-    <div class="card">
-        <h3>Bài 10</h3>
-        <p>Nhấn nút để xem nội dung Bài 10</p>
-        <a class="profile-btn" href="bai10.html">Xem Bài 10</a>
-    </div>
-    <div class="card">
-        <h3>Bài 11</h3>
-        <p>Nhấn nút để xem nội dung Bài 11</p>
-        <a class="profile-btn" href="bài11.html">Xem Bài 11</a>
-    </div>
-    <div class="card">
-        <h3>Bài 12</h3>
-        <p>Nhấn nút để xem nội dung Bài 12</p>
-        <a class="profile-btn" href="bai12naymoidung.html">Xem Bài 12</a>
-    </div>
+<!-- Exercises -->
+<h2 id="exercises" style="text-align:center; margin-top:40px;">Bài tập</h2>
+<div class="exercises">
+
+    <div class="exercise" onclick="location.href='bai9.html'">Bài 9</div>
+    <div class="exercise" onclick="location.href='bai10.html'">Bài 10</div>
+    <div class="exercise" onclick="location.href='bai11.html'">Bài 11</div>
+    <div class="exercise" onclick="location.href='bai12.html'">Bài 12</div>
+
 </div>
 
 <footer>
@@ -307,11 +244,3 @@ footer {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
