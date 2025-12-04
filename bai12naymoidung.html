@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luyện tập & Vận dụng</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #fff7c2;
+        margin: 0;
+        padding: 0;
+        color: #5a4a00;
+    }
+
+    header {
+        text-align: center;
+        background: #ffe680;
+        padding: 20px;
+        font-size: 32px;
+        font-weight: bold;
+        border-bottom: 3px solid #f1c40f;
+    }
+
+    section {
+        width: 90%;
+        max-width: 900px;
+        background: #fff3a1;
+        margin: 25px auto;
+        padding: 20px;
+        border-radius: 12px;
+        border: 2px solid #ffd84d;
+        box-shadow: 0 0 10px #ffe28a;
+    }
+
+    h2 {
+        text-align: center;
+        color: #b88600;
+        margin-bottom: 10px;
+    }
+
+    form label {
+        font-weight: bold;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 6px 0 15px 0;
+        border: 1px solid #c9a200;
+        border-radius: 6px;
+    }
+
+    input[type="submit"] {
+        background: #ffcc00;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+        background: #f1b800;
+    }
+
+    iframe {
+        width: 100%;
+        height: 300px;
+        border: 1px solid #c9a200;
+        border-radius: 6px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    Luyện tập & Vận dụng
+</header>
+
+<!-- ========== LUYỆN TẬP ========== -->
+<section>
+    <h2>LUYỆN TẬP</h2>
+
+    <h3>1. Form cơ bản</h3>
+    <form action="/register" method="post">
+        <label>Tài khoản:</label>
+        <input type="text" placeholder="Nhập tên tài khoản...">
+    </form>
+
+    <h3>2. Form có phần tử Select</h3>
+    <form>
+        <label for="country">Quốc gia:</label>
+        <select id="country" name="country">
+            <option value="vietnam">Việt Nam</option>
+            <option value="usa">United States</option>
+            <option value="uk">United Kingdom</option>
+        </select>
+    </form>
+
+    <h3>3. Form với Textarea</h3>
+    <form>
+        <label for="feedback">Phản hồi:</label>
+        <textarea id="feedback" rows="4" placeholder="Nhập phản hồi tại đây..."></textarea>
+    </form>
+
+    <h3>4. Input cơ bản</h3>
+
+    <label for="username">Tên người dùng:</label>
+    <input type="text" id="username">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email">
+
+    <label for="birthdate">Ngày sinh:</label>
+    <input type="date" id="birthdate">
+
+</section>
+
+<!-- ========== VẬN DỤNG 1 ========== -->
+<section>
+    <h2>VẬN DỤNG 1 — Biểu mẫu đăng ký</h2>
+
+    <form action="/submit_registration" method="post">
+        <label for="fullname">Họ và tên:</label>
+        <input type="text" id="fullname" required>
+
+        <label for="email2">Email:</label>
+        <input type="email" id="email2" required>
+
+        <label for="birthdate2">Ngày sinh:</label>
+        <input type="date" id="birthdate2" required>
+
+        <label for="membership">Loại thành viên:</label>
+        <select id="membership">
+            <option value="basic">Thành viên cơ bản</option>
+            <option value="premium">Thành viên cao cấp</option>
+        </select>
+
+        <input type="submit" value="Đăng ký">
+    </form>
+</section>
+
+<!-- ========== VẬN DỤNG 2 ========== -->
+<section>
+    <h2>VẬN DỤNG 2 — Trang nghệ thuật</h2>
+
+    <p><b>Nhạc Quốc ca (audio):</b></p>
+    <audio controls>
+        <source src="quoc-ca.mp3" type="audio/mpeg">
+        Trình duyệt không hỗ trợ audio.
+    </audio>
+
+    <p><b>Nhấn "Đăng ký" để mở biểu mẫu:</b></p>
+    <p><a href="#formdangky" target="iframe_content">Đăng ký</a></p>
+
+    <iframe name="iframe_content"></iframe>
+</section>
+
+</body>
+</html>
