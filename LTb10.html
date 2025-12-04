@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giới thiệu bản thân - Vũ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74b9ff, #a29bfe);
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      margin-bottom: 20px;
+      animation: floatAvatar 3s ease-in-out infinite;
+    }
+
+    .friends {
+      margin-top: 40px;
+    }
+
+    .friend-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.2);
+      padding: 15px 20px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .friend-card span {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .fb-icon {
+      width: 40px;
+      height: 40px;
+    }
+      @keyframes floatAvatar {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Giới thiệu bản thân</h1>
+    <img src=\"gen-n-z7285700291720_fca5d52e1f01e90eef4a685d474c81f8 (1).jpg\" alt="Avatar của Vũ" class="avatar" />
+
+    <p><strong>Tên:</strong> Phi Vũ</p>
+    <p><strong>Sở thích:</strong> Chơi game, ngủ, nghe nhạc</p>
+
+    <div class="friends">
+      <h2>Bạn bè</h2>
+
+      <div class="friend-card">
+        <span>Thành Danh</span>
+        <a href="https://www.facebook.com/share/16HpANbhqD/" target="_blank">
+          <img src="image.png" class="fb-icon" alt="Facebook" />
+        </a>
+      </div>
+
+      <div class="friend-card">
+        <span>Yến Ngân</span>
+        <a href="https://www.facebook.com/share/17aXHhnQo4/" target="_blank">
+          <img src="image.png" class="fb-icon" alt="Facebook" />
+        </a>
+      </div>
+
+      <div class="friend-card">
+        <span>Anh Vy</span>
+        <a href="https://www.facebook.com/share/1YK7FxMyJX/" target="_blank">
+          <img src="image.png" class="fb-icon" alt="Facebook" />
+        </a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
