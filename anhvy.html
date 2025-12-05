@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="vi">
 <head>
@@ -176,6 +177,18 @@
     .contact{justify-content:center}
     .team-box{flex-direction:column;text-align:center}
   }
+#avatarImg {
+  width: 260px;
+  height: 260px;
+  border-radius: 30px;
+  object-fit: cover;
+  filter: brightness(1.05) contrast(1.05);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+#avatarImg:hover {
+  transform: scale(1.06);
+  filter: brightness(1.15) contrast(1.10);
+}
 </style>
 </head>
 
@@ -187,19 +200,7 @@
   <div class="grid">
     <div>
       <div class="avatar">
-        <img id="avatarImg" src="data:image/svg+xml;utf8,
-          <svg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'>
-            <defs>
-              <linearGradient id='g1' x1='0' x2='1'><stop offset='0' stop-color='%23fff1f6'/><stop offset='1' stop-color='%23ffeaf6'/></linearGradient>
-            </defs>
-            <rect rx='36' width='800' height='800' fill='url(%23g1)'/>
-            <g transform='translate(140,140)'>
-              <circle cx='260' cy='260' r='160' fill='%23ffdff0'/>
-              <circle cx='230' cy='240' r='18' fill='%236b2460'/>
-              <circle cx='290' cy='240' r='18' fill='%236b2460'/>
-              <path d='M220 300 q40 40 80 0' stroke='%236b2460' stroke-width='14' fill='none' stroke-linecap='round'/>
-            </g>
-          </svg>" />
+        <img id="avatarImg" src="https://raw.githubusercontent.com/caovy1405-dev/CaoVy.github.io/refs/heads/main/c6d4f21bc780ca108b797d3ade345370.jpg" />
       </div>
     </div>
 
@@ -236,75 +237,4 @@
           <h3>📬 Liên hệ</h3>
           <div class="contact">
             <a href="mailto:caovy1405@gmail.com">Email</a>
-            <a href="https://www.instagram.com/__cn.avy" target="_blank">Instagram</a>
-            <a href="https://www.facebook.com/Cao.Ngo.Anh.Vy" target="_blank">Facebook</a>
-          </div>
-        </div>
-
-        <!-- ⭐ NEW SECTION: CÁNH TAY TRÁI CỦA TRƯỞNG NHÓM -->
-        <div class="section">
-          <h3>🤝 Thành viên – Cánh tay trái của trưởng nhóm</h3>
-
-          <div class="team-box">
-            <div class="team-avatar">
-              <img src="https://raw.githubusercontent.com/caovy1405-dev/CaoVy.github.io/refs/heads/main/c6d4f21bc780ca108b797d3ade345370.jpg" alt="Avatar cánh tay trái">
-            </div>
-
-            <div>
-              <p>
-                Đây là **cánh tay trái đáng tin cậy của trưởng nhóm** — người luôn hỗ trợ hết mình trong mọi công việc,
-                xử lý hậu cần, kiểm tra tiến độ và nhắc nhở cả nhóm khi cần.
-              </p>
-              <p>
-                Tính cách trách nhiệm, làm việc có kế hoạch và luôn bình tĩnh ngay cả trong những lúc mọi người rối nhất.
-                Là người giúp nhóm vận hành trơn tru từng ngày. 🌟
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <p class="footer">"Be gentle with yourself — bạn đang làm rất tốt rồi." 🌷</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  // Sakura petals
-  (function(){
-    const container = document.getElementById('sakura');
-    function rand(min,max){ return Math.random()*(max-min)+min; }
-    function createPetal(){
-      const p = document.createElement('div');
-      p.className = 'petal';
-      const size = rand(10,22);
-      p.style.width = size + 'px';
-      p.style.height = size*0.85 + 'px';
-      p.style.left = rand(-5,105) + '%';
-      p.style.top = '-6%';
-      container.appendChild(p);
-
-      const duration = rand(6000,14000);
-      const start = Date.now();
-      const rot = rand(0,360);
-      function step(){
-        const t = (Date.now() - start)/duration;
-        if(t >= 1){ p.remove(); return; }
-        const y = t * 120;
-        const sway = Math.sin(t * Math.PI * 2 * rand(0.5,1.8)) * rand(20,70);
-        p.style.top = y + '%';
-        p.style.left = `calc(${parseFloat(p.style.left)}% + ${sway}px)`;
-        p.style.transform = `rotate(${rot + t*720}deg)`;
-        p.style.opacity = String(1 - t*0.85);
-        requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-
-    for(let i=0;i<8;i++) setTimeout(createPetal, i*160);
-    setInterval(()=> createPetal(), 700);
-  })();
-</script>
-
-</body>
-</html>
+            <a href="https://www.instagram.com/__cn.avy" target="_blank">Instagram
