@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="vi">
 <head>
@@ -37,7 +36,6 @@
     padding:26px;
   }
 
-  /* layout */
   .grid{
     display:grid;
     grid-template-columns: 240px 1fr;
@@ -45,7 +43,6 @@
     align-items:center;
   }
 
-  /* avatar */
   .avatar{
     width:240px;
     height:240px;
@@ -58,7 +55,6 @@
   }
   .avatar img{width:100%;height:100%;object-fit:cover;display:block}
 
-  /* info card */
   .card{
     background:var(--card);
     border-radius:14px;
@@ -66,6 +62,7 @@
     border:1px solid rgba(220,180,200,0.25);
     box-shadow: 0 6px 20px rgba(160,110,140,0.05);
   }
+
   h1{
     font-family: "Gloria Hallelujah", cursive;
     font-size:30px;
@@ -89,7 +86,6 @@
     color:#5b3b51;
   }
 
-  /* sections */
   .section{
     margin-top:14px;
   }
@@ -98,11 +94,37 @@
     margin-bottom:8px;
     font-size:18px;
   }
+
+  .team-box{
+    display:flex;
+    gap:16px;
+    background:rgba(255,240,248,0.6);
+    padding:14px;
+    border-radius:14px;
+    border:1px solid rgba(255,200,220,0.3);
+    box-shadow: 0 4px 12px rgba(200,100,150,0.06);
+    margin-top:12px;
+    align-items:center;
+  }
+
+  .team-avatar{
+    width:90px;
+    height:90px;
+    border-radius:14px;
+    overflow:hidden;
+    border:4px solid rgba(255,255,255,0.8);
+    box-shadow: 0 6px 12px rgba(200,120,160,0.12);
+  }
+  .team-avatar img{
+    width:100%;height:100%;object-fit:cover;
+  }
+
   ul.simple{
     list-style: disc;
     padding-left:20px;
     color:#5a3b52;
   }
+
   .contact{
     display:flex;
     gap:12px;
@@ -110,6 +132,7 @@
     margin-top:8px;
     flex-wrap:wrap;
   }
+
   .contact a{
     display:inline-flex;
     gap:8px;
@@ -123,9 +146,13 @@
     font-weight:600;
     box-shadow: 0 6px 18px rgba(210,150,185,0.04);
   }
-  .contact svg{width:20px;height:20px;flex-shrink:0}
 
-  /* sakura (petals) */
+  .footer{
+    margin-top:14px;
+    font-size:13px;
+    color:#7a5a71;
+  }
+
   .sakura{
     pointer-events:none;
     position:absolute;
@@ -143,34 +170,23 @@
     opacity:0.95;
   }
 
-  /* responsive */
   @media (max-width:760px){
     .grid{grid-template-columns:1fr; text-align:center}
     .avatar{margin:0 auto}
     .contact{justify-content:center}
+    .team-box{flex-direction:column;text-align:center}
   }
-
-  /* cute footer */
-  .footer{
-    margin-top:14px;
-    font-size:13px;
-    color:#7a5a71;
-  }
-
-  /* small hover */
-  a:hover{transform:translateY(-3px);transition:all .16s ease}
 </style>
 </head>
+
 <body>
 
-<div class="container" role="main" aria-labelledby="profileTitle">
+<div class="container">
   <div class="sakura" id="sakura"></div>
 
   <div class="grid">
-    <!-- Left: Avatar -->
     <div>
-      <div class="avatar" title="Avatar Cao Ngô Anh Vy">
-        <!-- default cute avatar - change src to your photo if you want -->
+      <div class="avatar">
         <img id="avatarImg" src="data:image/svg+xml;utf8,
           <svg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'>
             <defs>
@@ -183,17 +199,17 @@
               <circle cx='290' cy='240' r='18' fill='%236b2460'/>
               <path d='M220 300 q40 40 80 0' stroke='%236b2460' stroke-width='14' fill='none' stroke-linecap='round'/>
             </g>
-          </svg>" alt="Avatar Cao Ngô Anh Vy" />
+          </svg>" />
       </div>
     </div>
 
-    <!-- Right: Info -->
     <div>
-      <h1 id="profileTitle">Xin chào! Mình là Cao Ngô Anh Vy 💖</h1>
+      <h1>Xin chào! Mình là Cao Ngô Anh Vy 💖</h1>
       <p class="lead">Mình đến từ lớp 12 Anh. Cảm ơn bạn đã ghé xem profile nhỏ xinh này nhé! 🌸</p>
 
-      <div class="card" aria-label="Thông tin cơ bản">
-        <div class="info-grid" role="list">
+      <div class="card">
+
+        <div class="info-grid">
           <div class="pill"><strong>Ngày sinh</strong><br>14/05/2008</div>
           <div class="pill"><strong>Lớp</strong><br>12 Anh</div>
           <div class="pill"><strong>Sở thích</strong><br>Hát · Nghe nhạc · Yêu mèo & cún</div>
@@ -202,8 +218,8 @@
         <div class="section">
           <h3>🌱 Tính cách (khách quan)</h3>
           <ul class="simple">
-            <li>Hoà đồng, dễ tạo thiện cảm với người khác.</li>
-            <li>Suy nghĩ tích cực, biết quan tâm đến cảm xúc mọi người.</li>
+            <li>Hoà đồng, dễ tạo thiện cảm.</li>
+            <li>Suy nghĩ tích cực, biết quan tâm mọi người.</li>
             <li>Tinh tế, có gu thẩm mỹ dễ thương.</li>
           </ul>
         </div>
@@ -211,43 +227,39 @@
         <div class="section">
           <h3>✨ Điểm mạnh & mục tiêu</h3>
           <ul class="simple">
-            <li>Giọng hát có cảm xúc, thích được luyện tập và chia sẻ.</li>
-            <li>Mục tiêu: tự tin hơn, trau dồi kỹ năng giao tiếp và theo đuổi sở thích.</li>
+            <li>Giọng hát cảm xúc, thích luyện tập và chia sẻ.</li>
+            <li>Mục tiêu: tự tin hơn và phát triển kỹ năng giao tiếp.</li>
           </ul>
         </div>
 
         <div class="section">
           <h3>📬 Liên hệ</h3>
-          <div class="contact" role="group" aria-label="Liên hệ">
-            <!-- Email -->
-            <a href="mailto:caovy1405@gmail.com" title="Gửi email cho Vy">
-              <!-- mail icon -->
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M3 6.5C3 5.67 3.67 5 4.5 5h15c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11z" stroke="#8a3b6a" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M21 6l-9 7L3 6" stroke="#8a3b6a" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              caovy1405@gmail.com
-            </a>
+          <div class="contact">
+            <a href="mailto:caovy1405@gmail.com">Email</a>
+            <a href="https://www.instagram.com/__cn.avy" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/Cao.Ngo.Anh.Vy" target="_blank">Facebook</a>
+          </div>
+        </div>
 
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/__cn.avy" target="_blank" rel="noopener noreferrer" title="Instagram của Vy">
-              <!-- insta icon -->
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="5" stroke="#8a3b6a" stroke-width="1.3"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="#8a3b6a" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M17.5 6.5h.01" stroke="#8a3b6a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              @__cn.avy
-            </a>
+        <!-- ⭐ NEW SECTION: CÁNH TAY TRÁI CỦA TRƯỞNG NHÓM -->
+        <div class="section">
+          <h3>🤝 Thành viên – Cánh tay trái của trưởng nhóm</h3>
 
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/Cao.Ngo.Anh.Vy" target="_blank" rel="noopener noreferrer" title="Facebook của Vy">
-              <!-- facebook icon -->
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M18 2H6a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h6.5V14.5H11v-3h1.5V10c0-1.5.9-2.3 2.2-2.3.6 0 1.2.05 1.2.05v2.3h-1.1c-1 0-1.3.6-1.3 1.2v1.4H18l-1 3.5h-2V22H18a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3z" fill="#8a3b6a" opacity="0.9"/>
-              </svg>
-              Cao Ngo Anh Vy
-            </a>
+          <div class="team-box">
+            <div class="team-avatar">
+              <img src="https://raw.githubusercontent.com/caovy1405-dev/CaoVy.github.io/refs/heads/main/c6d4f21bc780ca108b797d3ade345370.jpg" alt="Avatar cánh tay trái">
+            </div>
+
+            <div>
+              <p>
+                Đây là **cánh tay trái đáng tin cậy của trưởng nhóm** — người luôn hỗ trợ hết mình trong mọi công việc,
+                xử lý hậu cần, kiểm tra tiến độ và nhắc nhở cả nhóm khi cần.
+              </p>
+              <p>
+                Tính cách trách nhiệm, làm việc có kế hoạch và luôn bình tĩnh ngay cả trong những lúc mọi người rối nhất.
+                Là người giúp nhóm vận hành trơn tru từng ngày. 🌟
+              </p>
+            </div>
           </div>
         </div>
 
@@ -257,30 +269,8 @@
   </div>
 </div>
 
-<!-- JS: avatar replace + sakura animation -->
 <script>
-  // Optional: allow clicking avatar to upload a new image (client-side only)
-  (function(){
-    const avatar = document.getElementById('avatarImg');
-    // create invisible file input
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'image/*';
-    input.style.display = 'none';
-    document.body.appendChild(input);
-    avatar.style.cursor = 'pointer';
-    avatar.title = 'Nhấp để thay avatar (tạm thời trên máy bạn)';
-    avatar.addEventListener('click', ()=> input.click());
-    input.addEventListener('change', (e)=>{
-      const f = e.target.files && e.target.files[0];
-      if(!f) return;
-      const reader = new FileReader();
-      reader.onload = function(ev){ avatar.src = ev.target.result; };
-      reader.readAsDataURL(f);
-    });
-  })();
-
-  // Sakura petals (simple)
+  // Sakura petals
   (function(){
     const container = document.getElementById('sakura');
     function rand(min,max){ return Math.random()*(max-min)+min; }
@@ -300,24 +290,19 @@
       function step(){
         const t = (Date.now() - start)/duration;
         if(t >= 1){ p.remove(); return; }
-        const y = t * 120; // percent
+        const y = t * 120;
         const sway = Math.sin(t * Math.PI * 2 * rand(0.5,1.8)) * rand(20,70);
         p.style.top = y + '%';
         p.style.left = `calc(${parseFloat(p.style.left)}% + ${sway}px)`;
-        p.style.transform = `rotate(${rot + t*720}deg) scale(${0.95 + 0.1*Math.sin(t*3)})`;
+        p.style.transform = `rotate(${rot + t*720}deg)`;
         p.style.opacity = String(1 - t*0.85);
         requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
     }
 
-    // initial burst
-    for(let i=0;i<8;i++) setTimeout(createPetal, i*140);
-    // continuous spawn
-    setInterval(()=> {
-      const n = Math.random() > 0.75 ? 3 : 1;
-      for(let i=0;i<n;i++) setTimeout(createPetal, i*100);
-    }, 650);
+    for(let i=0;i<8;i++) setTimeout(createPetal, i*160);
+    setInterval(()=> createPetal(), 700);
   })();
 </script>
 
