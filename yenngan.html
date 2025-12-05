@@ -1,53 +1,202 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yến Ngân</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phạm Yến Ngân - Giới thiệu cá nhân</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #ffeef7;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
+    :root{
+      --yellow:#F8D94A;
+      --yellow-dark:#C7A400;
+      --bg1:#1A1605;
+      --bg2:#0f0c03;
+      --text:#fffef2;
+      --muted:#fff9cc;
+      --card:#2c2408;
+      --radius:18px;
+      --shadow:0 10px 35px rgba(0,0,0,0.55);
+      font-family: 'Poppins', sans-serif;
     }
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 400px;
+
+    *{box-sizing:border-box; margin:0; padding:0}
+    body{
+      background:linear-gradient(180deg, var(--bg1), var(--bg2));
+      color:var(--text);
+      padding:30px;
+      animation: fadeIn 1.2s ease;
     }
-    img {
-      width: 180px;
-      height: 180px;
-      border-radius: 20px;
-      object-fit: cover;
-      margin-bottom: 20px;
+
+    @keyframes fadeIn {
+      from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:none;}
     }
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #ff5ea6;
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      gap:30px;
     }
-    p {
-      font-size: 1rem;
-      line-height: 1.5;
+
+    /* Header */
+    header{display:flex;justify-content:space-between;align-items:center; margin-bottom:10px;}
+
+    .logo{
+      display:flex; align-items:center; gap:15px;
+      animation: slideIn 1s ease;
+    }
+
+    @keyframes slideIn {
+      from{opacity:0; transform:translateX(-40px);} to{opacity:1; transform:none;}
+    }
+
+    .mark{
+      background:linear-gradient(135deg, var(--yellow), var(--yellow-dark));
+      width:60px; height:60px;
+      border-radius:14px;
+      display:flex; justify-content:center; align-items:center;
+      font-weight:700; color:#2a2100;
+      font-size:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .lead{color:var(--muted); font-size:14px; margin-top:3px}
+
+    /* Card */
+    .card{
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:22px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(6px);
+      animation: pop 0.9s ease;
+    }
+
+    @keyframes pop{
+      from{opacity:0; transform:scale(0.95);} to{opacity:1; transform:scale(1);}
+    }
+
+    /* Intro */
+    .intro{
+      display:grid; grid-template-columns:320px 1fr;
+      gap:25px; align-items:center;
+    }
+
+    .avatar{
+      width:230px; height:230px; border-radius:16px; overflow:hidden;
+      border:4px solid rgba(255,255,255,0.1);
+      box-shadow:var(--shadow);
+      animation: float 4s infinite ease-in-out;
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0);} 
+      50%{transform:translateY(-8px);} 
+      100%{transform:translateY(0);}  
+    }
+
+    .avatar img{width:100%; height:100%; object-fit:cover}
+
+    .name{font-size:24px; font-weight:700; margin-top:10px}
+    .role{color:var(--muted); font-size:14px; margin-top:3px}
+
+    .intro-right p{color:var(--muted); line-height:1.7; margin-top:6px}
+
+
+    /* Group Section */
+    .pill{
+      background:rgba(255,255,255,0.08);
+      padding:6px 12px;
+      display:inline-block;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.1);
+      margin-bottom:8px;
+    }
+
+    h2,h3{color:var(--yellow)}
+
+    footer{
+      margin-top:20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media(max-width:860px){
+      .intro{grid-template-columns:1fr; text-align:center}
+      .avatar{margin:0 auto}
     }
   </style>
 </head>
+
 <body>
-  <div class="card">
-    <img src="https://raw.githubusercontent.com/yenngan1234/yenngan.github.io/refs/heads/main/2b65b5b221ff5df58b2cbc2fc84c1022.jpg" alt="Avatar" />
-    <h1>Yến Ngân</h1>
-    <p><strong>Ngày sinh:</strong> 09/02/2008</p>
-    <p><strong>Sở thích:</strong> ăn uống, vẽ, nghe nhạc</p>
-    <p><strong>Tính cách:</strong> hòa đồng, hoạt bát, vui vẻ</p>
-    <p><strong>Slogan:</strong> "Đừng làm việc chăm chỉ, hãy làm việc thông minh"</p>
-      <a href="index.html" style="display:inline-block;margin-top:20px;padding:10px 20px;background:#ff5ea6;color:white;text-decoration:none;border-radius:10px;font-weight:bold;">Quay về trang chủ</a>
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <div class="mark">YN</div>
+        <div>
+          <h1>Phạm Yến Ngân</h1>
+          <p class="lead">Trang giới thiệu cá nhân — chủ đề vàng nổi bật</p>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- Khung 1 -->
+    <section class="card intro">
+
+      <!-- Left -->
+      <div class="intro-left" style="text-align:center">
+        <div class="avatar">
+          <img src="https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/avatar%201.jpg?raw=true" alt="Avatar">
+        </div>
+        <div class="name">Phạm Yến Ngân</div>
+        <div class="role">Học sinh / Thành viên nhóm</div>
+      </div>
+
+      <!-- Right -->
+      <div class="intro-right">
+        <h2>Giới thiệu ngắn</h2>
+        <p>
+          Xin chào! Mình là <strong>Phạm Yến Ngân</strong>. Điểm mạnh của mình là sự tỉ mỉ, trách nhiệm và khả năng làm việc nhóm rất tốt. Mình luôn hoàn thành nhiệm vụ đúng hạn và thích hỗ trợ mọi người trong nhóm khi cần.
+        </p>
+        <p>
+          Điểm yếu mình đang cải thiện là đôi khi hơi cầu toàn, dẫn đến mất nhiều thời gian cho các chi tiết nhỏ. Ngoài ra, mình cũng đang học cách tự tin hơn khi trình bày trước đám đông.
+        </p>
+        <p>
+          Sở thích của mình gồm nghe nhạc, làm đồ thủ công, trang trí, và xem những video truyền cảm hứng phát triển bản thân.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- Khung 2 -->
+    <section class="card">
+      <div class="pill">Phân công & Vai trò</div>
+      <h3>Cánh tay phải của trưởng nhóm</h3>
+
+      <p style="color:var(--muted); line-height:1.75; margin-top:10px">
+        Trong nhóm, mình đảm nhận vai trò như <strong>cánh tay phải của trưởng nhóm</strong>. Mình hỗ trợ kiểm tra tiến độ, nhắc nhở deadline, và giúp trưởng nhóm giải quyết những vấn đề nhỏ để mọi thứ diễn ra suôn sẻ hơn. 
+        <br><br>
+        Khi các thành viên gặp khó khăn, mình là người lắng nghe đầu tiên và tìm cách hỗ trợ, giúp kết nối mọi người lại với nhau. Mình cũng phụ trách truyền đạt thông tin, đảm bảo mọi thành viên đều hiểu rõ nhiệm vụ và mục tiêu chung.
+        <br><br>
+        Vai trò này giúp mình rèn luyện sự chủ động, khả năng giao tiếp và xử lý tình huống — những yếu tố quan trọng để xây dựng một tập thể đoàn kết và hiệu quả.
+      </p>
+    </section>
+
+
+    <footer>
+      © <span id="year"></span> Phạm Yến Ngân — Trang giới thiệu cá nhân
+    </footer>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
