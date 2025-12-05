@@ -1,310 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Profile - Cao Ngô Anh Vy</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giới thiệu cá nhân - Nguyễn Phi Vũ</title>
+
 <style>
-  :root{
-    --bg1: #FFF7FB;
-    --card: #ffffffcc;
-    --accent: #ff9ccf;
-    --muted: #7a5a71;
-    --radius: 18px;
-    --shadow: 0 12px 30px rgba(180,110,150,0.12);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-    background: linear-gradient(180deg,var(--bg1), #fff1f6);
-    color: #403048;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:100vh;
-    padding:28px;
-  }
+    body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #5a0000, #cc0000, #ff1a1a);
+        color: #fff;
+        animation: fadeIn 1.2s ease-in-out;
+    }
 
-  .container{
-    width:min(980px,96vw);
-    background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,250,253,0.88));
-    border-radius: calc(var(--radius) + 6px);
-    box-shadow: var(--shadow);
-    overflow:hidden;
-    position:relative;
-    padding:26px;
-  }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
 
-  .grid{
-    display:grid;
-    grid-template-columns: 240px 1fr;
-    gap:22px;
-    align-items:center;
-  }
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 40px auto;
+    }
 
-  .avatar{
-    width:240px;
-    height:240px;
-    border-radius:18px;
-    overflow:hidden;
-    border:6px solid rgba(255,255,255,0.8);
-    background:linear-gradient(180deg,#fffafc,#fff0f8);
-    box-shadow: 0 10px 30px rgba(200,120,160,0.12);
-    position:relative;
-  }
-  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .card {
+        background: rgba(255, 255, 255, 0.12);
+        border-left: 6px solid #ff4d4d;
+        padding: 28px;
+        border-radius: 18px;
+        margin-bottom: 35px;
+        box-shadow: 0 0 18px rgba(255, 0, 0, 0.45);
+        animation: slideUp 0.9s ease forwards;
+        opacity: 0;
+        transform: translateY(25px);
+    }
 
-  .card{
-    background:var(--card);
-    border-radius:14px;
-    padding:18px;
-    border:1px solid rgba(220,180,200,0.25);
-    box-shadow: 0 6px 20px rgba(160,110,140,0.05);
-  }
+    @keyframes slideUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-  h1{
-    font-family: "Gloria Hallelujah", cursive;
-    font-size:30px;
-    color:#8a2460;
-    margin-bottom:6px;
-  }
-  p.lead{color:var(--muted);margin-bottom:10px}
+    .title {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 25px;
+        text-shadow: 0 0 12px #ff4d4d;
+    }
 
-  .info-grid{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:10px;
-  }
-  .pill{
-    background: linear-gradient(180deg,#fff,#fff0);
-    padding:8px 12px;
-    border-radius:12px;
-    border:1px solid rgba(220,200,220,0.4);
-    font-size:14px;
-    color:#5b3b51;
-  }
+    .flex {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
 
-  .section{
-    margin-top:14px;
-  }
-  .section h3{
-    color:#8a2d66;
-    margin-bottom:8px;
-    font-size:18px;
-  }
+    .left, .right {
+        flex: 1;
+        min-width: 260px;
+    }
 
-  .team-box{
-    display:flex;
-    gap:16px;
-    background:rgba(255,240,248,0.6);
-    padding:14px;
-    border-radius:14px;
-    border:1px solid rgba(255,200,220,0.3);
-    box-shadow: 0 4px 12px rgba(200,100,150,0.06);
-    margin-top:12px;
-    align-items:center;
-  }
+    h2 {
+        font-size: 26px;
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px #ff3333;
+    }
 
-  .team-avatar{
-    width:90px;
-    height:90px;
-    border-radius:14px;
-    overflow:hidden;
-    border:4px solid rgba(255,255,255,0.8);
-    box-shadow: 0 6px 12px rgba(200,120,160,0.12);
-  }
-  .team-avatar img{
-    width:100%;height:100%;object-fit:cover;
-  }
+    .avatar {
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        border: 5px solid #ff3333;
+        object-fit: cover;
+        box-shadow: 0 0 20px #ff1a1a;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
 
-  ul.simple{
-    list-style: disc;
-    padding-left:20px;
-    color:#5a3b52;
-  }
+    .avatar:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px #ff4d4d;
+    }
 
-  .contact{
-    display:flex;
-    gap:12px;
-    align-items:center;
-    margin-top:8px;
-    flex-wrap:wrap;
-  }
-
-  .contact a{
-    display:inline-flex;
-    gap:8px;
-    align-items:center;
-    padding:8px 12px;
-    background:linear-gradient(180deg,#fff,#fff6f9);
-    border-radius:12px;
-    border:1px solid rgba(220,180,200,0.2);
-    text-decoration:none;
-    color:#5b3b51;
-    font-weight:600;
-    box-shadow: 0 6px 18px rgba(210,150,185,0.04);
-  }
-
-  .footer{
-    margin-top:14px;
-    font-size:13px;
-    color:#7a5a71;
-  }
-
-  .sakura{
-    pointer-events:none;
-    position:absolute;
-    inset:0;
-    overflow:hidden;
-    z-index:2;
-  }
-  .petal{
-    position:absolute;
-    width:16px;
-    height:16px;
-    border-radius:50% 50% 40% 40%;
-    background: radial-gradient(circle at 35% 30%, #fff 0%, #ffdff0 35%, #ffbfdc 70%);
-    filter: drop-shadow(0 8px 12px rgba(200,100,150,0.06));
-    opacity:0.95;
-  }
-
-  @media (max-width:760px){
-    .grid{grid-template-columns:1fr; text-align:center}
-    .avatar{margin:0 auto}
-    .contact{justify-content:center}
-    .team-box{flex-direction:column;text-align:center}
-  }
+    p {
+        line-height: 1.6;
+        font-size: 18px;
+    }
 </style>
 </head>
 
 <body>
 
 <div class="container">
-  <div class="sakura" id="sakura"></div>
 
-  <div class="grid">
-    <div>
-      <div class="avatar">
-        <img id="avatarImg" src="data:image/svg+xml;utf8,
-          <svg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'>
-            <defs>
-              <linearGradient id='g1' x1='0' x2='1'><stop offset='0' stop-color='%23fff1f6'/><stop offset='1' stop-color='%23ffeaf6'/></linearGradient>
-            </defs>
-            <rect rx='36' width='800' height='800' fill='url(%23g1)'/>
-            <g transform='translate(140,140)'>
-              <circle cx='260' cy='260' r='160' fill='%23ffdff0'/>
-              <circle cx='230' cy='240' r='18' fill='%236b2460'/>
-              <circle cx='290' cy='240' r='18' fill='%236b2460'/>
-              <path d='M220 300 q40 40 80 0' stroke='%236b2460' stroke-width='14' fill='none' stroke-linecap='round'/>
-            </g>
-          </svg>" />
-      </div>
-    </div>
+    <!-- KHUNG 1 -->
+    <div class="card">
+        <div class="title">Giới thiệu khái quát</div>
 
-    <div>
-      <h1>Xin chào! Mình là Cao Ngô Anh Vy 💖</h1>
-      <p class="lead">Mình đến từ lớp 12 Anh. Cảm ơn bạn đã ghé xem profile nhỏ xinh này nhé! 🌸</p>
-
-      <div class="card">
-
-        <div class="info-grid">
-          <div class="pill"><strong>Ngày sinh</strong><br>14/05/2008</div>
-          <div class="pill"><strong>Lớp</strong><br>12 Anh</div>
-          <div class="pill"><strong>Sở thích</strong><br>Hát · Nghe nhạc · Yêu mèo & cún</div>
-        </div>
-
-        <div class="section">
-          <h3>🌱 Tính cách (khách quan)</h3>
-          <ul class="simple">
-            <li>Hoà đồng, dễ tạo thiện cảm.</li>
-            <li>Suy nghĩ tích cực, biết quan tâm mọi người.</li>
-            <li>Tinh tế, có gu thẩm mỹ dễ thương.</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h3>✨ Điểm mạnh & mục tiêu</h3>
-          <ul class="simple">
-            <li>Giọng hát cảm xúc, thích luyện tập và chia sẻ.</li>
-            <li>Mục tiêu: tự tin hơn và phát triển kỹ năng giao tiếp.</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h3>📬 Liên hệ</h3>
-          <div class="contact">
-            <a href="mailto:caovy1405@gmail.com">Email</a>
-            <a href="https://www.instagram.com/__cn.avy" target="_blank">Instagram</a>
-            <a href="https://www.facebook.com/Cao.Ngo.Anh.Vy" target="_blank">Facebook</a>
-          </div>
-        </div>
-
-        <!-- ⭐ NEW SECTION: CÁNH TAY TRÁI CỦA TRƯỞNG NHÓM -->
-        <div class="section">
-          <h3>🤝 Thành viên – Cánh tay trái của trưởng nhóm</h3>
-
-          <div class="team-box">
-            <div class="team-avatar">
-              <img src="https://raw.githubusercontent.com/caovy1405-dev/CaoVy.github.io/refs/heads/main/c6d4f21bc780ca108b797d3ade345370.jpg" alt="Avatar cánh tay trái">
+        <div class="flex">
+            <div class="left">
+                <h2>Nguyễn Phi Vũ</h2>
+                <img class="avatar" src="https://github.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/blob/main/avatar%203.jpg?raw=true">
             </div>
 
-            <div>
-              <p>
-                Đây là **cánh tay trái đáng tin cậy của trưởng nhóm** — người luôn hỗ trợ hết mình trong mọi công việc,
-                xử lý hậu cần, kiểm tra tiến độ và nhắc nhở cả nhóm khi cần.
-              </p>
-              <p>
-                Tính cách trách nhiệm, làm việc có kế hoạch và luôn bình tĩnh ngay cả trong những lúc mọi người rối nhất.
-                Là người giúp nhóm vận hành trơn tru từng ngày. 🌟
-              </p>
+            <div class="right">
+                <p>
+                    Xin chào! Mình là <b>Nguyễn Phi Vũ</b>, một người tràn đầy năng lượng và luôn cố gắng hoàn thiện bản thân.  
+                    <br><br>
+                    <b>Điểm mạnh:</b> Nhanh nhẹn, dễ thích nghi, có tinh thần cầu tiến và sẵn sàng hỗ trợ nhóm.  
+                    <br>
+                    <b>Điểm yếu:</b> Đôi lúc hơi hấp tấp nhưng đang dần cải thiện để làm việc cẩn thận hơn.  
+                    <br>
+                    <b>Sở thích:</b> Nghe nhạc, chơi game giải trí, học thêm kĩ năng mới và tham gia hoạt động nhóm.
+                </p>
             </div>
-          </div>
         </div>
-
-        <p class="footer">"Be gentle with yourself — bạn đang làm rất tốt rồi." 🌷</p>
-      </div>
     </div>
-  </div>
+
+    <!-- KHUNG 2 -->
+    <div class="card">
+        <div class="title">Phân công trong nhóm</div>
+        <p>
+            Trong nhóm, mình đảm nhận vai trò như <b>“móng dò”</b> của trưởng nhóm — người theo sát tiến độ, hỗ trợ kiểm tra, dò lỗi và báo cáo những vấn đề cần điều chỉnh.  
+            <br><br>
+            Nhiệm vụ của mình là đảm bảo mọi phần việc đi đúng hướng, giúp trưởng nhóm xử lý tình huống nhanh chóng và giữ cho toàn đội hoạt động trơn tru, hiệu quả.
+        </p>
+    </div>
+
 </div>
-
-<script>
-  // Sakura petals
-  (function(){
-    const container = document.getElementById('sakura');
-    function rand(min,max){ return Math.random()*(max-min)+min; }
-    function createPetal(){
-      const p = document.createElement('div');
-      p.className = 'petal';
-      const size = rand(10,22);
-      p.style.width = size + 'px';
-      p.style.height = size*0.85 + 'px';
-      p.style.left = rand(-5,105) + '%';
-      p.style.top = '-6%';
-      container.appendChild(p);
-
-      const duration = rand(6000,14000);
-      const start = Date.now();
-      const rot = rand(0,360);
-      function step(){
-        const t = (Date.now() - start)/duration;
-        if(t >= 1){ p.remove(); return; }
-        const y = t * 120;
-        const sway = Math.sin(t * Math.PI * 2 * rand(0.5,1.8)) * rand(20,70);
-        p.style.top = y + '%';
-        p.style.left = `calc(${parseFloat(p.style.left)}% + ${sway}px)`;
-        p.style.transform = `rotate(${rot + t*720}deg)`;
-        p.style.opacity = String(1 - t*0.85);
-        requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-
-    for(let i=0;i<8;i++) setTimeout(createPetal, i*160);
-    setInterval(()=> createPetal(), 700);
-  })();
-</script>
 
 </body>
 </html>
