@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Võ Thành Danh - Giới thiệu cá nhân</title>
+  <style>
+    :root{
+      --bg:#071A3A; /* xanh đậm */
+      --accent:#0B5394; /* xanh nhạt để làm nổi bật */
+      --card:#0E2A4A; 
+      --glass: rgba(255,255,255,0.04);
+      --text:#FFFFFF;
+      --muted:rgba(255,255,255,0.88);
+      --radius:16px;
+      --shadow: 0 10px 30px rgba(3,10,25,0.6);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#04122a);color:var(--text)}
+
+    .container{
+      max-width:1100px;margin:40px auto;padding:28px;display:flex;flex-direction:column;gap:22px;
+    }
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#093a6b);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--text);box-shadow:var(--shadow)}
+
+    h1{margin:0;font-size:20px}
+    p.lead{margin:0;color:var(--muted)}
+
+    /* Card common */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,0.03)}
+
+    /* Khung 1 */
+    .intro{display:grid;grid-template-columns: 320px 1fr;gap:20px;align-items:center}
+    .intro-left{display:flex;flex-direction:column;align-items:center;gap:14px}
+    .avatar{width:220px;height:220px;border-radius:12px;overflow:hidden;flex-shrink:0;border:4px solid rgba(255,255,255,0.05)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .name{font-size:22px;font-weight:700;margin-top:4px}
+    .role{font-size:13px;color:var(--muted)}
+
+    .intro-right p{line-height:1.6;color:var(--muted);margin:0}
+    .badge-list{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+    .badge{background:linear-gradient(90deg,var(--accent),#0a4c82);padding:8px 12px;border-radius:999px;font-size:13px}
+
+    /* Khung 2 */
+    .group{display:flex;flex-direction:column;gap:12px}
+    .group .title{display:flex;align-items:center;gap:12px}
+    .pill{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.02)}
+
+    /* Actions */
+    .actions{display:flex;gap:12px;margin-left:auto}
+    .btn{background:var(--accent);color:var(--text);padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,0.06)}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+    footer{color:var(--muted);font-size:13px;padding:8px 0;text-align:center}
+
+    /* Responsive */
+    @media(max-width:880px){
+      .intro{grid-template-columns:1fr;}
+      .avatar{width:160px;height:160px}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">VD</div>
+        <div>
+          <h1>Võ Thành Danh</h1>
+          <p class="lead">Trang giới thiệu cá nhân</p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://www.facebook.com/vothanhdanh08/">Liên hệ</a>
+        <a class="btn ghost" href="#download">Tải CV</a>
+      </div>
+    </header>
+
+    <!-- Khung 1: Giới thiệu khái quát -->
+    <section class="card intro" aria-labelledby="intro-heading">
+      <div class="intro-left">
+        <div class="avatar" aria-hidden="true">
+          <img src="https://raw.githubusercontent.com/vothanhdanh5890-beep/thanhdanh0gay.github.io/refs/heads/main/images%20(1).jpg" alt="Avatar của Võ Thành Danh">
+        </div>
+        <div class="name">Võ Thành Danh</div>
+        <div class="role">Học sinh / Thành viên nhóm</div>
+        <div class="badge-list">
+          
+          <div class="badge">Thiết kế web</div>
+          <div class="badge">Giao tiếp</div>
+        </div>
+      </div>
+
+      <div class="intro-right">
+        <h2 id="intro-heading">Giới thiệu ngắn</h2>
+        <p>
+          Xin chào — tôi là <strong>Võ Thành Danh</strong>. Tôi có khả năng làm việc nhóm tốt, suy nghĩ hệ thống và chịu được áp lực khi cần hoàn thành công việc đúng hạn. Điểm mạnh của tôi bao gồm: tư duy logic, kỹ năng lập trình cơ bản, và giao tiếp rõ ràng. Điểm yếu tôi đang cải thiện là quản lý thời gian khi có nhiều đầu việc đồng thời, và cần rèn luyện thêm kỹ năng thiết kế UI nâng cao. Sở thích: đọc sách về kỹ năng mềm, học công nghệ mới, và chơi bóng rổ vào cuối tuần.
+        </p>
+        <div style="height:8px"></div>
+        <p style="opacity:0.95;color:var(--muted)">
+          Tôi luôn tìm cách học hỏi nhanh, sẵn sàng đảm nhận trách nhiệm, và thích đóng góp ý tưởng để giúp cả nhóm tiến lên. Nếu bạn muốn trao đổi về dự án, thiết kế giao diện, hoặc hợp tác trong học tập — hãy liên hệ!
+        </p>
+      </div>
+    </section>
+
+    <!-- Khung 2: Phân công trong nhóm -->
+    <section class="card group" aria-labelledby="group-heading">
+      <div class="title">
+        <div class="pill">Phân công & Vai trò</div>
+        <h3 id="group-heading" style="margin:0">Người trưởng nhóm mẫu mực</h3>
+      </div>
+
+      <div>
+        <p style="margin:0;color:var(--muted);line-height:1.7">
+          Trong nhóm, trưởng nhóm là người dẫn dắt bằng ví dụ: phân công công việc rõ ràng, theo dõi tiến độ đều đặn, và hỗ trợ khi thành viên gặp khó khăn. Một trưởng nhóm mẫu mực luôn lắng nghe ý kiến mọi người, tạo môi trường tôn trọng, và đưa ra quyết định công bằng. Họ không chỉ giao nhiệm vụ mà còn đảm bảo mỗi thành viên hiểu mục tiêu, nguồn lực và thời hạn công việc. Khi cần, trưởng nhóm sẽ điều chỉnh kế hoạch, đào tạo người mới, và khuyến khích sáng kiến — để cả nhóm có thể cùng phát triển và đạt kết quả tốt nhất.
+        </p>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-top:10px">
+        <div class="pill">Trách nhiệm: Lên kế hoạch</div>
+        <div class="pill">Trách nhiệm: Phân công & Kiểm tra</div>
+        <div class="pill">Trách nhiệm: Hỗ trợ & Đào tạo</div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Võ Thành Danh — Trang giới thiệu cá nhân
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
