@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 18 – Thực hành tổng hợp thiết kế trang web (Tin học 12)</title>
+
+<style>
+:root {
+  --navy: #0a1a2f;
+  --navy-light: #12345b;
+  --white: #ffffff;
+  --gray-bg: #f4f6f9;
+  --code-bg: #0d223a;
+  --accent: #1e90ff;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--gray-bg);
+  margin: 0;
+  color: #111;
+}
+
+header {
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  color: var(--white);
+  text-align: center;
+  padding: 28px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 20px rgba(0,0,0,0.3);
+}
+
+.container {
+  max-width: 1100px;
+  background: var(--white);
+  margin: 35px auto;
+  padding: 35px 45px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border-left: 8px solid var(--navy-light);
+}
+
+h2 {
+  color: var(--navy);
+  border-left: 6px solid var(--accent);
+  padding-left: 12px;
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+h3 {
+  color: var(--navy-light);
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+p {
+  font-size: 17px;
+  margin: 12px 0;
+}
+
+pre {
+  background: var(--code-bg);
+  color: #d6eaff;
+  padding: 18px;
+  border-left: 5px solid var(--accent);
+  overflow-x: auto;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+code {
+  background: #1b324d;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: #ffdd8a;
+}
+
+footer {
+  text-align: center;
+  padding: 18px;
+  background: var(--navy);
+  color: white;
+  margin-top: 50px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+Bài 18 – Thực hành tổng hợp thiết kế trang web
+</header>
+
+<div class="container">
+
+<!-- Luyện tập 1 -->
+<h2>Luyện tập 1 – Trang 105 (Tin học 12)</h2>
+
+<p><b>Yêu cầu:</b><br>
+Tạo trang <code>dang_ki.html</code> chứa biểu mẫu đăng kí câu lạc bộ và bổ sung liên kết
+tới trang <code>dang_ki</code> trong phần cuối trang của tất cả các trang.</p>
+
+<h3>Lời giải:</h3>
+
+<p>
+Để tạo trang <code>dang_ki.html</code> chứa biểu mẫu đăng kí câu lạc bộ và bổ sung liên kết
+tới trang đăng kí, em thực hiện các bước sau:
+</p>
+
+<p>
+<b>Bước 1:</b> Tạo tệp HTML mới và đặt tên là <code>dang_ki.html</code>.
+</p>
+
+<p>
+<b>Bước 2:</b> Trong tệp <code>dang_ki.html</code>, tạo biểu mẫu đăng kí bằng thẻ
+<code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code> và
+<code>&lt;button&gt;</code>.
+</p>
+
+<pre>
+&lt;form&gt;
+  &lt;label&gt;Họ và tên:&lt;/label&gt;
+  &lt;input type="text"&gt;
+
+  &lt;label&gt;Lớp:&lt;/label&gt;
+  &lt;input type="text"&gt;
+
+  &lt;label&gt;Câu lạc bộ:&lt;/label&gt;
+  &lt;select&gt;
+    &lt;option&gt;Tin học&lt;/option&gt;
+    &lt;option&gt;Văn nghệ&lt;/option&gt;
+    &lt;option&gt;Thể thao&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button&gt;Gửi đăng kí&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+
+<p>
+<b>Bước 3:</b> Bổ sung liên kết tới trang <code>dang_ki.html</code> ở phần cuối
+của tất cả các trang khác trong website.
+</p>
+
+<pre>
+&lt;footer&gt;
+  &lt;a href="dang_ki.html"&gt;Đăng kí câu lạc bộ&lt;/a&gt;
+&lt;/footer&gt;
+</pre>
+
+<hr>
+
+<!-- Luyện tập 2 -->
+<h2>Luyện tập 2 – Trang 105 (Tin học 12)</h2>
+
+<p><b>Yêu cầu:</b><br>
+Thay đổi định dạng và màu sắc của phông chữ trong các vùng khi di chuyển chuột qua.</p>
+
+<h3>Lời giải:</h3>
+
+<p>
+Để thay đổi định dạng và màu sắc của phông chữ khi di chuyển chuột qua,
+ta sử dụng pseudo-class <code>:hover</code> trong CSS.
+</p>
+
+<pre>
+.box {
+  background: #eaeaea;
+  padding: 20px;
+  color: #000;
+}
+
+.box:hover {
+  background: #1e90ff;
+  color: #ffffff;
+  font-style: italic;
+}
+</pre>
+
+<p>
+Khi người dùng di chuyển chuột qua các vùng nội dung,
+màu nền và kiểu chữ sẽ thay đổi.
+</p>
+
+<hr>
+
+<!-- Vận dụng -->
+<h2>Vận dụng – Trang 105 (Tin học 12)</h2>
+
+<p><b>Yêu cầu:</b><br>
+Đưa ra một thiết kế khác cho website đã tạo ở phần Thực hành và chuyển toàn bộ website
+sang thiết kế mới.</p>
+
+<h3>Lời giải:</h3>
+
+<p>
+Để thay đổi thiết kế website, em tạo một tệp CSS riêng để quản lí giao diện
+và áp dụng cho tất cả các trang.
+</p>
+
+<p><b>Bước 1:</b> Tạo tệp CSS mới, ví dụ <code>style.css</code>.</p>
+
+<pre>
+body {
+  background: #eef2f7;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+header {
+  background: linear-gradient(135deg, #0a1a2f, #12345b);
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+.container {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+}
+</pre>
+
+<p>
+<b>Bước 2:</b> Liên kết tệp CSS vào tất cả các trang HTML:
+</p>
+
+<pre>
+&lt;link rel="stylesheet" href="style.css"&gt;
+</pre>
+
+<p>
+Sau khi liên kết, toàn bộ website sẽ được chuyển sang thiết kế mới theo định dạng đã tạo.
+</p>
+
+</div>
+
+<footer>
+© 2025 – Bài 18 Tin học 12 – Thực hành tổng hợp thiết kế trang web
+</footer>
+
+</body>
+</html>
