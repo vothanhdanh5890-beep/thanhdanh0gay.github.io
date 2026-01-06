@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tin học 12 – Bài tập Trang 95</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        code, pre {
+            background-color: #eee;
+            padding: 8px;
+            display: block;
+            border-left: 4px solid #3498db;
+            margin: 10px 0;
+        }
+
+        .important {
+            font-weight: bold;
+            color: red;
+        }
+
+        .normal {
+            font-style: italic;
+            color: blue;
+        }
+
+        .box {
+            width: 300px;
+            padding: 15px;
+            margin-top: 20px;
+            border-top: 1px solid red;
+            border-bottom: 2px dashed blue;
+            border-left: 3px dotted green;
+            border-right: 4px double purple;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>BÀI TẬP TRANG 95 – TIN HỌC 12</h1>
+    <p><strong>Chủ đề:</strong> Định dạng trang web bằng CSS</p>
+
+    <h2>Luyện tập 1</h2>
+    <p>
+        Phần tử HTML <strong>có thể được ẩn đi</strong> trên trang web bằng cách sử dụng CSS.
+        Lệnh được dùng là:
+    </p>
+
+    <pre>
+display: none;
+    </pre>
+
+    <p>
+        Thuộc tính này giúp phần tử không hiển thị trên trang web và không chiếm không gian trong bố cục.
+    </p>
+
+    <h2>Luyện tập 2</h2>
+    <p>Xét định dạng CSS sau:</p>
+
+    <pre>
+.test.test_more {
+    background-color: red;
+}
+    </pre>
+
+    <p>
+        <strong>.test.test_more</strong> là một bộ chọn đồng thời (class selector), áp dụng cho
+        các phần tử HTML có <strong>cả hai lớp</strong> là <code>test</code> và <code>test_more</code>.
+    </p>
+    <p>
+        Thuộc tính <code>background-color: red;</code> dùng để đặt màu nền đỏ cho các phần tử đó.
+    </p>
+
+    <h2>Vận dụng 1</h2>
+    <p>
+        Giả sử trang web có rất nhiều thẻ <code>&lt;p&gt;</code>, trong đó có ba đoạn quan trọng
+        nhất là P1, P2 và P3.
+    </p>
+
+    <p class="important">Đây là đoạn P1 (định dạng riêng)</p>
+    <p class="normal">Đây là đoạn P2 (cùng kiểu với P3)</p>
+    <p class="normal">Đây là đoạn P3 (cùng kiểu với P2)</p>
+    <p>Đây là các đoạn văn bản còn lại, có định dạng giống nhau.</p>
+
+    <p>
+        Cách giải quyết là gán <strong>class riêng cho P1</strong> và
+        <strong>class chung cho P2 và P3</strong>, sau đó định dạng bằng CSS.
+    </p>
+
+    <h2>Vận dụng 2</h2>
+    <p>
+        Có thể thiết lập định dạng cho các khung với viền trên, dưới, trái, phải khác nhau
+        bằng cách sử dụng các thuộc tính CSS như <code>border-top</code>,
+        <code>border-bottom</code>, <code>border-left</code>, <code>border-right</code>.
+    </p>
+
+    <div class="box">
+        Đây là ví dụ một khung có viền trên, dưới, trái, phải khác nhau.
+    </div>
+
+</body>
+</html>
