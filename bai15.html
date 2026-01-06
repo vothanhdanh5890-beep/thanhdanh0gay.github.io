@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Luyện tập & Vận dụng CSS Selector</title>
+
+<style>
+/* ===== CHUNG ===== */
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f4f8;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+section {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+/* ===== LUYỆN TẬP 1 – BẢNG MÀU ===== */
+.color-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.color-box {
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.color-box:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.light {
+    color: #000;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== LUYỆN TẬP 2 ===== */
+.parent span {
+    color: blue;
+}
+
+.parent > span {
+    color: red;
+}
+
+/* ===== VẬN DỤNG 1 ===== */
+.container .parent .child span {
+    background: yellow;
+    padding: 4px;
+}
+
+.parent2 > .child2 > span {
+    background: lightgreen;
+    padding: 4px;
+}
+
+/* ===== VẬN DỤNG 2 ===== */
+.container2 h2 + p + p {
+    color: red;
+    font-weight: bold;
+}
+
+.container3 > ul + p + ul {
+    border: 2px dashed blue;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>LUYỆN TẬP & VẬN DỤNG CSS SELECTOR</h1>
+
+<!-- ================= LUYỆN TẬP 1 ================= -->
+<section>
+<h2>LUYỆN TẬP 1: Bảng màu RGB</h2>
+
+<div class="color-container">
+    <div class="color-box" style="background: rgb(0,0,0)">Đen</div>
+    <div class="color-box light" style="background: rgb(255,255,255)">Trắng</div>
+    <div class="color-box" style="background: rgb(255,0,0)">Đỏ</div>
+    <div class="color-box" style="background: rgb(0,128,0)">Xanh lá</div>
+    <div class="color-box" style="background: rgb(0,0,255)">Xanh da trời</div>
+    <div class="color-box" style="background: rgb(0,0,128)">Xanh lam</div>
+</div>
+</section>
+
+<!-- ================= LUYỆN TẬP 2 ================= -->
+<section>
+<h2>LUYỆN TẬP 2: So sánh E F và E &gt; F</h2>
+
+<div class="parent">
+    <span>Span là con trực tiếp (E &gt; F áp dụng)</span>
+    <div>
+        <span>Span lồng sâu (chỉ E F áp dụng)</span>
+    </div>
+</div>
+
+<p><b>Giải thích:</b><br>
+- <code>E F</code>: áp dụng cho mọi F nằm trong E (kể cả lồng sâu).<br>
+- <code>E &gt; F</code>: chỉ áp dụng cho F là con trực tiếp của E.
+</p>
+</section>
+
+<!-- ================= VẬN DỤNG 1 ================= -->
+<section>
+<h2>VẬN DỤNG 1</h2>
+
+<h3>a) Selector E1 E2 E3</h3>
+<div class="container">
+    <div class="parent">
+        <div class="child">
+            <span>Span được định dạng (E1 E2 E3)</span>
+        </div>
+    </div>
+</div>
+
+<p>
+Selector <code>.container .parent .child span</code> áp dụng cho thẻ
+<code>span</code> nằm trong <code>.child</code>, <code>.parent</code>,
+và <code>.container</code>, không cần là con trực tiếp.
+</p>
+
+<h3>b) Selector E1 &gt; E2 &gt; E3</h3>
+<div class="parent2">
+    <div class="child2">
+        <span>Span được định dạng (E1 &gt; E2 &gt; E3)</span>
+    </div>
+</div>
+
+<p>
+Selector <code>.parent2 &gt; .child2 &gt; span</code> chỉ áp dụng khi
+<code>span</code> là con trực tiếp của <code>.child2</code>.
+</p>
+</section>
+
+<!-- ================= VẬN DỤNG 2 ================= -->
+<section>
+<h2>VẬN DỤNG 2</h2>
+
+<h3>a) Selector E + F + G</h3>
+<div class="container2">
+    <h2>Tiêu đề</h2>
+    <p>Đoạn 1</p>
+    <p>Đoạn 2 (được định dạng)</p>
+</div>
+
+<p>
+Selector <code>h2 + p + p</code> áp dụng cho thẻ <code>p</code> thứ hai
+nằm ngay sau <code>p</code> thứ nhất và sau <code>h2</code>.
+</p>
+
+<h3>b) Selector E &gt; F + G</h3>
+<div class="container3">
+    <ul><li>Danh sách 1</li></ul>
+    <p>Đoạn văn</p>
+    <ul><li>Danh sách 2 (được định dạng)</li></ul>
+</div>
+
+<p>
+Selector <code>.container3 &gt; ul + p + ul</code> áp dụng cho
+<code>ul</code> nằm sau <code>p</code>, và <code>p</code> nằm sau
+<code>ul</code> là con trực tiếp của <code>.container3</code>.
+</p>
+</section>
+
+</body>
+</html>
